@@ -1,0 +1,40 @@
+cmake_minimum_required(VERSION 3.10...3.28)
+
+project(test_cmake VERSION 0.1.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 소스 라이브러리
+set(SrcLib SrcLib)
+set(SrcFiles
+    src/Plus.cpp
+    src/Minus.cpp
+)
+add_library(${SrcLib} STATIC ${SrcFiles})
+target_include_directories(${SrcLib} PUBLIC src)
+
+# GoogleTest
+add_subdirectory(googletest-1.16.0)
+
+# Plus 테스트
+add_executable(TestPlus
+    tests/TestPlus.cpp
+)
+target_link_libraries(TestPlus
+    gtest_main
+    ${SrcLib}
+)
+
+# Minus 테스트 추가
+add_executable(TestMinus
+    tests/TestMinus.cpp
+)
+target_link_libraries(TestMinus
+    gtest_main
+    ${SrcLib}
+)
+
+enable_testing()
+add_test(NAME TestPlus COMMAND TestPlus)
+add_test(NAME TestMinus COMMAND TestMinus)
