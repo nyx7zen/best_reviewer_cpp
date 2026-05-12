@@ -1,2 +1,0 @@
-C:\mingw64\bin\ar.exe qc libSrcLib.a CMakeFiles/SrcLib.dir/src/Plus.cpp.obj CMakeFiles/SrcLib.dir/src/Minus.cpp.obj
-C:\mingw64\bin\ranlib.exe libSrcLib.a

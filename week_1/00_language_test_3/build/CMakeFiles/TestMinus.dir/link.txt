@@ -1,3 +1,0 @@
-C:\mingw64\bin\cmake.exe -E rm -f CMakeFiles\TestMinus.dir/objects.a
-C:\mingw64\bin\ar.exe qc CMakeFiles\TestMinus.dir/objects.a @CMakeFiles\TestMinus.dir\objects1.rsp
-C:\mingw64\bin\g++.exe --coverage -Wl,--whole-archive CMakeFiles\TestMinus.dir/objects.a -Wl,--no-whole-archive -o TestMinus.exe -Wl,--out-implib,libTestMinus.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TestMinus.dir\linkLibs.rsp
