@@ -15,15 +15,17 @@ add_library(${SrcLib} STATIC ${SrcFiles})
 target_include_directories(${SrcLib} PUBLIC src)
 
 # GoogleTest — FetchContent 방식 (자동 다운로드)
-include(FetchContent)
-FetchContent_Declare(
-    googletest
-    URL https://github.com/google/googletest/archive/refs/tags/v1.16.0.zip
-    TLS_VERIFY OFF
-    DOWNLOAD_EXTRACT_TIMESTAMP TRUE
-)
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
+add_subdirectory(external/googletest-1.16.0)
+
+# include(FetchContent)
+# FetchContent_Declare(
+#     googletest
+#     URL https://github.com/google/googletest/archive/refs/tags/v1.16.0.zip
+#     TLS_VERIFY OFF
+#     DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+# )
+# set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+# FetchContent_MakeAvailable(googletest)
 
 # TestPlus 실행파일
 add_executable(TestPlus

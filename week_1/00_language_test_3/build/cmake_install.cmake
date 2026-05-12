@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/edu_2026/best_reviewer_cpp/week_1/00_language_test_3/build/_deps/googletest-build/cmake_install.cmake")
+  include("D:/edu_2026/best_reviewer_cpp/week_1/00_language_test_3/build/external/googletest-1.16.0/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
